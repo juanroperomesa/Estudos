@@ -1,0 +1,16 @@
+<!-- @dsCard group="Conteúdo" height=220 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Card</title>
+<style>body{margin:0;padding:16px;background:var(--color-background-default);font-family:var(--font-sans);color:var(--color-foreground-default)}.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}.cap{font-size:12px;font-weight:600;color:var(--color-foreground-default);margin:0 0 8px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var F = window.FoundationIA, h = React.createElement;
+ReactDOM.createRoot(document.getElementById("root")).render(h("div",{className:"row",style:{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))"}},
+ h(F.Card,{title:"Tokens de cor",description:"161 cores em três camadas: primitivos, semânticos e de componente.",footer:h(F.Badge,{tone:"success"},"Sincronizado")}),
+ h(F.Card,{title:"Tipografia",description:"Open Sans em 10 estilos e Roboto Mono para código.",onClick:function(){},footer:h(F.Tag,null,"Clicável")})));
+</script>
+</body>
+</html>

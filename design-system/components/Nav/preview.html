@@ -1,0 +1,15 @@
+<!-- @dsCard group="Navegação" height=96 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Nav</title>
+<style>body{margin:0;padding:16px;background:var(--color-background-default);font-family:var(--font-sans);color:var(--color-foreground-default)}.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}.cap{font-size:12px;font-weight:600;color:var(--color-foreground-default);margin:0 0 8px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var F = window.FoundationIA, h = React.createElement;
+ReactDOM.createRoot(document.getElementById("root")).render(h(F.Nav,{brand:"App - Skill Claude",activeKey:"tokens",
+ items:[{key:"inicio",label:"Início"},{key:"tokens",label:"Tokens"},{key:"componentes",label:"Componentes"}],end:"john@exemplo.com"}));
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* Foundation-IA components. Every value comes from a token. */
+.fia-btn, .fia-input, .fia-field, .fia-card, .fia-badge, .fia-tag, .fia-tooltip, .fia-modal, .fia-nav { font-family: var(--font-sans); box-sizing: border-box; }
+.fia-btn:focus-visible, .fia-input:focus-visible, .fia-card--interactive:focus-visible, .fia-nav__item:focus-visible, .fia-tag__remove:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-action-primary); outline-offset: 2px;
+}
+
+/* Button */
+.fia-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--component-button-gap);
+  padding: var(--component-button-padding-y) var(--component-button-padding-x);
+  border-radius: var(--component-button-radius); border: var(--component-button-border-width) solid transparent;
+  font-size: 14px; line-height: 1.5; font-weight: 600; cursor: pointer; text-decoration: none;
+  transition: background-color var(--motion-duration-fast) var(--motion-easing-default), border-color var(--motion-duration-fast) var(--motion-easing-default);
+}
+.fia-btn--full { width: 100%; }
+.fia-btn__icon { display: inline-flex; }
+.fia-btn--primary { background: var(--component-button-primary-background); color: var(--component-button-primary-foreground); border-color: var(--component-button-primary-border); }
+.fia-btn--primary:hover { background: var(--component-button-primary-background-hover); border-color: var(--component-button-primary-background-hover); }
+.fia-btn--primary:active { background: var(--component-button-primary-background-active); border-color: var(--component-button-primary-background-active); }
+.fia-btn--secondary { background: var(--component-button-secondary-background); color: var(--component-button-secondary-foreground); border-color: var(--component-button-secondary-border); }
+.fia-btn--secondary:hover { background: var(--component-button-secondary-background-hover); }
+.fia-btn--ghost { background: var(--component-button-ghost-background); color: var(--component-button-ghost-foreground); border-color: var(--component-button-ghost-border); }
+.fia-btn--ghost:hover { background: var(--component-button-ghost-background-hover); }
+.fia-btn:disabled, .fia-btn:disabled:hover { background: var(--component-button-disabled-background); color: var(--component-button-disabled-foreground); border-color: var(--component-button-disabled-border); cursor: not-allowed; }
+
+/* Input */
+.fia-field { display: flex; flex-direction: column; gap: var(--component-input-gap); }
+.fia-field__label { font-size: 14px; line-height: 1.5; font-weight: 600; color: var(--component-input-label); }
+.fia-input {
+  width: 100%; padding: var(--component-input-padding-y) var(--component-input-padding-x);
+  border: var(--component-input-border-width) solid var(--component-input-border); border-radius: var(--component-input-radius);
+  background: var(--component-input-background); color: var(--component-input-foreground);
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.75;
+  transition: border-color var(--motion-duration-normal) var(--motion-easing-default);
+}
+.fia-input::placeholder { color: var(--component-input-placeholder); }
+.fia-input:focus { outline: none; border-color: var(--component-input-border-focus); box-shadow: 0 0 0 calc(var(--component-input-border-width-focus) - var(--component-input-border-width)) var(--component-input-border-focus); background: var(--component-input-background-focus); }
+.fia-field--error .fia-input { border-color: var(--component-input-border-error); }
+.fia-field--error .fia-input:focus { box-shadow: 0 0 0 calc(var(--component-input-border-width-focus) - var(--component-input-border-width)) var(--component-input-border-error); }
+.fia-input:disabled { background: var(--component-input-background-disabled); color: var(--component-input-foreground-disabled); border-color: var(--component-input-border-disabled); cursor: not-allowed; }
+.fia-field__helper, .fia-field__error { margin: 0; font-size: 14px; line-height: 1.5; }
+.fia-field__helper { color: var(--component-input-helper-text); }
+.fia-field__error { color: var(--component-input-error-text); }
+
+/* Card */
+.fia-card {
+  display: flex; flex-direction: column; gap: var(--component-card-gap); text-align: left;
+  padding: var(--component-card-padding); border-radius: var(--component-card-radius);
+  border: var(--component-card-border-width) solid var(--component-card-border); background: var(--component-card-background);
+  color: var(--component-card-title); text-decoration: none; font: inherit; font-family: var(--font-sans);
+}
+.fia-card--interactive { cursor: pointer; transition: background-color var(--motion-duration-fast) var(--motion-easing-default); }
+.fia-card--interactive:hover { background: var(--component-card-background-hover); }
+.fia-card__title { margin: 0; font-size: 20px; line-height: 1.5; font-weight: 600; color: var(--component-card-title); }
+.fia-card__description { margin: 0; font-size: 14px; line-height: 1.5; color: var(--component-card-description); }
+.fia-card__footer { display: flex; gap: var(--spacing-inline-sm); flex-wrap: wrap; }
+
+/* Badge */
+.fia-badge { display: inline-flex; align-items: center; padding: var(--component-badge-padding-y) var(--component-badge-padding-x); border-radius: var(--component-badge-radius); font-size: 12px; line-height: 1.5; font-weight: 600; }
+.fia-badge--success { background: var(--component-badge-success-background); color: var(--component-badge-success-foreground); }
+.fia-badge--warning { background: var(--component-badge-warning-background); color: var(--component-badge-warning-foreground); }
+.fia-badge--error { background: var(--component-badge-error-background); color: var(--component-badge-error-foreground); }
+.fia-badge--info { background: var(--component-badge-info-background); color: var(--component-badge-info-foreground); }
+.fia-badge--neutral { background: var(--component-badge-neutral-background); color: var(--component-badge-neutral-foreground); }
+
+/* Tag */
+.fia-tag { display: inline-flex; align-items: center; gap: var(--spacing-xs); padding: var(--component-tag-padding-y) var(--component-tag-padding-x); border-radius: var(--component-tag-radius); border: var(--border-width-default) solid transparent; font-size: 12px; line-height: 1.5; font-weight: 600; }
+.fia-tag--default { background: var(--component-tag-default-background); color: var(--component-tag-default-foreground); border-color: var(--component-tag-default-border); }
+.fia-tag--brand { background: var(--component-tag-brand-background); color: var(--component-tag-brand-foreground); border-color: var(--component-tag-brand-background); }
+.fia-tag__remove { border: 0; background: none; color: inherit; font: inherit; line-height: 1; padding: 0; cursor: pointer; border-radius: var(--radius-full); }
+
+/* Tooltip */
+.fia-tooltip-wrap { position: relative; display: inline-flex; }
+.fia-tooltip {
+  position: absolute; left: 50%; z-index: 10; white-space: nowrap; pointer-events: none;
+  padding: var(--component-tooltip-padding-y) var(--component-tooltip-padding-x); border-radius: var(--component-tooltip-radius);
+  background: var(--component-tooltip-background); color: var(--component-tooltip-foreground); box-shadow: var(--shadow-lg);
+  font-size: 12px; line-height: 1.5; font-weight: 600;
+  opacity: 0; transform: translateX(-50%) translateY(2px);
+  transition: opacity var(--motion-duration-fast) var(--motion-easing-out), transform var(--motion-duration-fast) var(--motion-easing-out);
+}
+.fia-tooltip--top { bottom: calc(100% + var(--spacing-sm)); }
+.fia-tooltip--bottom { top: calc(100% + var(--spacing-sm)); }
+.fia-tooltip--open { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Modal */
+.fia-modal-root { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: var(--spacing-md); }
+.fia-modal-root--inline { position: relative; inset: auto; min-height: 100%; }
+.fia-modal__overlay { position: absolute; inset: 0; background: var(--component-modal-overlay); opacity: 0.5; }
+.fia-modal {
+  position: relative; display: flex; flex-direction: column; gap: var(--component-modal-gap); width: 100%; max-width: 440px;
+  padding: var(--component-modal-padding); border-radius: var(--component-modal-radius);
+  background: var(--component-modal-background); border: var(--border-width-default) solid var(--component-modal-border); box-shadow: var(--shadow-xl);
+  color: var(--color-foreground-default);
+}
+.fia-modal__title { margin: 0; font-size: 24px; line-height: 1.5; font-weight: 600; color: var(--component-modal-title); }
+.fia-modal__body { font-size: 16px; line-height: 1.75; }
+.fia-modal__actions { display: flex; justify-content: flex-end; gap: var(--spacing-inline-sm); flex-wrap: wrap; }
+
+/* Nav */
+.fia-nav {
+  display: flex; align-items: center; gap: var(--component-nav-gap); flex-wrap: wrap;
+  padding: var(--component-nav-padding-y) var(--component-nav-padding-x);
+  background: var(--component-nav-background); color: var(--component-nav-foreground);
+  border-bottom: var(--border-width-default) solid var(--component-nav-border);
+}
+.fia-nav__brand { font-size: 16px; font-weight: 700; margin-right: auto; }
+.fia-nav__list { display: flex; gap: var(--component-nav-gap); list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.fia-nav__item { display: inline-block; padding: var(--spacing-xs) 0; color: var(--component-nav-foreground); text-decoration: none; font-size: 14px; line-height: 1.5; font-weight: 600; border-radius: var(--radius-sm); }
+.fia-nav__item:hover { color: var(--component-nav-item-active); }
+.fia-nav__item--active { color: var(--component-nav-item-active); }
+.fia-nav__end { display: flex; align-items: center; gap: var(--spacing-inline-sm); font-size: 14px; color: var(--component-nav-foreground-muted); }
