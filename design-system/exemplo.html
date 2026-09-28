@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foundation-IA · Exemplo</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<style>
+  body { margin: 0; background: var(--color-background-subtle); color: var(--color-foreground-default); font-family: var(--font-sans); }
+  main { max-width: 400px; margin: var(--spacing-3xl) auto; padding: 0 var(--spacing-md); display: flex; flex-direction: column; gap: var(--spacing-lg); }
+  .form { display: flex; flex-direction: column; gap: var(--spacing-stack-md); }
+  h1, p { margin: 0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="components/bundle.js"></script>
+<script>
+  var F = window.FoundationIA, h = React.createElement;
+  function App() {
+    var dark = React.useState(false);
+    document.documentElement.dataset.theme = dark[0] ? "dark" : "light";
+    return h(React.Fragment, null,
+      h(F.Nav, { brand: "App - Skill Claude", activeKey: "entrar", items: [{ key: "inicio", label: "Início" }, { key: "entrar", label: "Entrar" }],
+        end: h(F.Button, { variant: "ghost", onClick: function () { dark[1](!dark[0]); } }, dark[0] ? "Tema claro" : "Tema escuro") }),
+      h("main", null,
+        h("div", null, h("h1", { className: "display-md" }, "Entrar na sua conta"),
+          h("p", { className: "body-md", style: { color: "var(--color-foreground-muted)" } }, "Insira seu e-mail e senha para continuar.")),
+        h(F.Card, null, h("div", { className: "form" },
+          h(F.Input, { label: "E-mail", type: "email", placeholder: "seu@email.com" }),
+          h(F.Input, { label: "Senha", type: "password", placeholder: "••••••••", helperText: "Mínimo de 8 caracteres" }),
+          h(F.Button, { fullWidth: true }, "Entrar"),
+          h(F.Button, { variant: "secondary", fullWidth: true }, "Continuar com Google"))),
+        h("div", { style: { display: "flex", gap: "8px", flexWrap: "wrap" } },
+          h(F.Badge, { tone: "success" }, "Ativo"), h(F.Badge, { tone: "info" }, "Novo"), h(F.Tag, { variant: "brand" }, "Foundation"))));
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(h(App));
+</script>
+</body>
+</html>

@@ -9,7 +9,22 @@ Design system do App - Skill Claude, gerado a partir do arquivo Foundation-IA no
 | --- | --- |
 | `tokens.json` | 261 tokens: cores Light/Dark, espaço, raio, borda, sombra, movimento e 11 estilos de texto |
 | `components/` | 8 componentes React (`bundle.js`, `bundle.css`, `index.d.ts`), com guia e preview de cada um |
+| `tokens.css` | As variáveis CSS geradas do `tokens.json`: temas Light e Dark, fontes e classes de texto |
+| `exemplo.html` | Tela de login de exemplo usando os tokens e os componentes, com botão para trocar o tema |
 | `fonts/` | Open Sans e Roboto Mono (woff2, subconjunto latino) |
+
+## Como usar
+
+```html
+<link rel="stylesheet" href="design-system/tokens.css">
+<link rel="stylesheet" href="design-system/components/bundle.css">
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="design-system/components/bundle.js"></script>
+<!-- window.FoundationIA.Button, .Input, .Card, .Badge, .Tag, .Tooltip, .Modal, .Nav -->
+```
+
+O tema segue a preferência do sistema. Para forçar um tema, use `data-theme="light"` ou `data-theme="dark"` no `<html>`. Para ver o exemplo, sirva a pasta com `python3 -m http.server` e abra `exemplo.html`.
 
 ---
 
